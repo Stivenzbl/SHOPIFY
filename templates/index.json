@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "main_product_landing": {
+      "type": "main-product-landing",
+      "settings": {}
+    },
+    "comparison_table": {
+      "type": "comparison-table",
+      "settings": {}
+    },
+    "results_section": {
+      "type": "results-section",
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {}
+    },
+    "faq_accordion": {
+      "type": "faq-accordion",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main_product_landing",
+    "comparison_table",
+    "results_section",
+    "testimonials",
+    "faq_accordion"
+  ]
+}

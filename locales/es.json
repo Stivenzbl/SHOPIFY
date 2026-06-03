@@ -1,0 +1,30 @@
+{
+  "general": {
+    "search": {
+      "placeholder": "Buscar...",
+      "submit": "Buscar"
+    },
+    "404": {
+      "title": "Página no encontrada",
+      "subtext": "La página que solicitó no existe."
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Agregar al carrito",
+      "buy_now": "Comprar ahora",
+      "sold_out": "Agotado",
+      "unavailable": "No disponible",
+      "price": "Precio",
+      "quantity": "Cantidad"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Carrito de Compras",
+      "empty": "Tu carrito está vacío",
+      "checkout": "Pagar",
+      "subtotal": "Subtotal"
+    }
+  }
+}

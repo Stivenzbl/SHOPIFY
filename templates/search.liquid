@@ -1,0 +1,25 @@
+<section class="container" style="padding: 60px 20px;">
+  <div class="glass-panel" style="padding: 40px; max-width: 800px; margin: 0 auto; text-align: center;">
+    <h1 style="font-family: var(--font-title); margin-bottom: 25px;">{{ 'general.search.placeholder' | t }}</h1>
+    
+    <form action="/search" method="get" role="search" style="display: flex; gap: 15px; margin-bottom: 40px;">
+      <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" style="flex: 1; padding: 12px 20px; border-radius: 8px; border: 1px solid var(--color-border-glass); background: var(--color-bg-dark); color: white; outline: none;">
+      <button type="submit" class="add-to-cart-btn" style="width: auto; padding: 12px 30px; margin-bottom: 0;">{{ 'general.search.submit' | t }}</button>
+    </form>
+    
+    {% if search.performed %}
+      {% if search.results_count > 0 %}
+        <div style="text-align: left; display: flex; flex-direction: column; gap: 20px;">
+          {% for item in search.results %}
+            <div style="border-bottom: 1px solid var(--color-border-glass); padding-bottom: 15px;">
+              <h3 style="font-family: var(--font-title); font-size: 1.2rem;"><a href="{{ item.url }}" style="color: var(--color-primary-light);">{{ item.title }}</a></h3>
+              <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 5px;">{{ item.content | strip_html | truncatewords: 30 }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p style="color: var(--color-text-muted);">No se encontraron resultados para "{{ search.terms | escape }}".</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>

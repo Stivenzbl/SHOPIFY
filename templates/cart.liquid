@@ -1,0 +1,56 @@
+<section class="container" style="padding: 40px 20px;">
+  <div class="glass-panel" style="padding: 30px; max-width: 800px; margin: 0 auto;">
+    <h1 style="margin-bottom: 20px; font-family: var(--font-title);">{{ 'cart.general.title' | t }}</h1>
+
+    {% if cart.item_count > 0 %}
+      <form action="/cart" method="post" novalidate>
+        <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px;">
+          {% for item in cart.items %}
+            <div style="display: flex; gap: 20px; align-items: center; border-bottom: 1px solid var(--color-border-glass); padding-bottom: 15px;">
+              <img src="{{ item.image | image_url: width: 100 }}" alt="{{ item.title | escape }}" width="80" height="80" style="object-fit: contain; background: var(--color-bg-card); border-radius: 8px;">
+              <div style="flex: 1;">
+                <h3 style="font-size: 1.1rem; font-family: var(--font-title);">{{ item.product.title }}</h3>
+                <p style="font-size: 0.9rem; color: var(--color-text-muted);">
+                  {% unless item.product.has_only_default_variant %}
+                    {{ item.variant.title }}
+                  {% endunless %}
+                </p>
+                <!-- Mostrar las propiedades personalizadas de talla y color de las ofertas -->
+                {% assign property_size = item.properties | size %}
+                {% if property_size > 0 %}
+                  <div style="font-size: 0.85rem; color: var(--color-primary-light); margin-top: 5px;">
+                    {% for p in item.properties %}
+                      {% unless p.last == blank %}
+                        <div><strong>{{ p.first }}:</strong> {{ p.last }}</div>
+                      {% endunless %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+              <div style="text-align: right;">
+                <p style="font-weight: bold;">{{ item.final_line_price | money }}</p>
+                <p style="font-size: 0.85rem; color: var(--color-text-muted);">Cant: {{ item.quantity }}</p>
+                <a href="/cart/change?line={{ forloop.index }}&quantity=0" style="color: var(--color-accent-red); font-size: 0.85rem; text-decoration: underline;">Eliminar</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <h3>{{ 'cart.general.subtotal' | t }}: <span style="color: var(--color-primary-light);">{{ cart.total_price | money }}</span></h3>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 4px;">Envío e impuestos calculados en el checkout</p>
+          </div>
+          <button type="submit" name="checkout" class="add-to-cart-btn" style="width: auto; padding: 12px 35px; margin-bottom: 0;">
+            {{ 'cart.general.checkout' | t }}
+          </button>
+        </div>
+      </form>
+    {% else %}
+      <div style="text-align: center; padding: 40px 0;">
+        <p style="margin-bottom: 20px;">{{ 'cart.general.empty' | t }}</p>
+        <a href="/" class="add-to-cart-btn" style="display: inline-block; width: auto; padding: 10px 25px;">Volver a la tienda</a>
+      </div>
+    {% endif %}
+  </div>
+</section>

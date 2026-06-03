@@ -1,0 +1,45 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "ZBC Deals Max Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Antigravity",
+    "theme_documentation_url": "https://zbcdeals.com",
+    "theme_support_url": "https://zbcdeals.com/support"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_bg_dark",
+        "label": "Background Dark",
+        "default": "#0b0713"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_purple",
+        "label": "Primary Purple",
+        "default": "#8b5cf6"
+      },
+      {
+        "type": "color",
+        "id": "color_primary_light",
+        "label": "Primary Light",
+        "default": "#a78bfa"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_red",
+        "label": "Accent Red (Buttons)",
+        "default": "#b91c1c"
+      },
+      {
+        "type": "color",
+        "id": "color_text_light",
+        "label": "Text Light",
+        "default": "#f3f4f6"
+      }
+    ]
+  }
+]

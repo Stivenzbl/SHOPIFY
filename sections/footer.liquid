@@ -1,0 +1,25 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="{{ 'LOGO_TINDA_430x.webp' | asset_url }}" alt="ZBC Deals" width="140" height="35" loading="lazy">
+    </div>
+    
+    <div class="footer-links">
+      <a href="/pages/politica-de-privacidad">Política de Privacidad</a>
+      <a href="/pages/terminos-de-servicio">Términos del Servicio</a>
+      <a href="/pages/politica-de-envio">Política de Envío</a>
+      <a href="/pages/contacto">Contacto</a>
+    </div>
+    
+    <p style="font-size: 0.8rem; margin-top: 20px;">
+      &copy; {{ 'now' | date: "%Y" }} {{ shop.name | default: "ZBC Deals" }}. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

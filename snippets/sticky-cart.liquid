@@ -1,0 +1,19 @@
+<div id="sticky-add-to-cart-bar" class="sticky-cart-bar">
+  <div class="sticky-cart-container">
+    <div class="sticky-product-info">
+      <div class="sticky-product-img">
+        <img src="{{ 'airpods_max_main.png' | asset_url }}" alt="AirPods Max Premium" width="50" height="50" loading="lazy">
+      </div>
+      <div class="sticky-product-meta">
+        <h4 id="sticky-product-title">ZBC Max Premium</h4>
+        <p id="sticky-price-text">€39,90</p>
+      </div>
+    </div>
+    <div class="sticky-cart-actions">
+      <span id="sticky-qty-text" class="sticky-qty-offer">Compra 2 (Envío Gratis)</span>
+      <button id="sticky-submit-btn" type="button" class="sticky-btn">
+        {{ 'products.product.add_to_cart' | t }}
+      </button>
+    </div>
+  </div>
+</div>

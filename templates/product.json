@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product-landing",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
